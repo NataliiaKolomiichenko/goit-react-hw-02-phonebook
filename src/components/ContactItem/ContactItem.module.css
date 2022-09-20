@@ -1,0 +1,7 @@
+.listItem:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.btn {
+    cursor: pointer;
+}
