@@ -12,9 +12,14 @@ class App extends Component {
 
   addContact = (newContact) => {
     const { contacts } = this.state;
-    const contactNames = contacts.map(contact => contact.name)
-    if (contactNames.includes(newContact.name)) {
-      return alert(`${newContact.name} is already in contacts.`)
+    const { name } = newContact;
+    const normalizedNameNewContract = name.toLowerCase();
+    const contactNames = contacts.map(contact => {
+      const contactName = contact.name;
+      return contactName.toLowerCase()
+    })
+    if (contactNames.includes(normalizedNameNewContract)) {
+      return alert(`${name} is already in contacts.`)
     }
     this.setState((prev) => {
       return {
